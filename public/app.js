@@ -5,8 +5,13 @@ let myRed = Math.random()*256|0;
 let myGreen = Math.random()*256|0;
 let myBlue = Math.random()*256|0;
 let myAlpha = Math.random()*256|0;
+let range = Math.random()*600|50;
+let charge = Math.random()*0|-200;
 
 let circleSize;
+
+console.log('Range:'+range);
+console.log('Range:'+charge);
 
 socket.on('connect', () => {
     console.log("Connected");
@@ -32,7 +37,7 @@ socket.on('message-share', (data) => {
   maxLength,
   maxLength2 = maxLength * maxLength;
 
-var nodes = d3.range(300).map(function() {
+var nodes = d3.range(range).map(function() {
 return {
   x: Math.random() * width,
   y: Math.random() * height - 650
@@ -42,7 +47,7 @@ return {
 var force = d3.layout.force()
   .size([width, height])
   .nodes(nodes.slice())
-  .charge(function(d, i) { return i ? -120 : -100; })
+  .charge(function(d, i) { return i ? charge : -100; })
   .on("tick", ticked)
   .start();
 
