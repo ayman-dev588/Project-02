@@ -22,7 +22,7 @@ socket.on('message', (data) => {
 io.emit('message-share', data);
 
 //Send data to ALL other clients but the sender
-// socket.broadcast.emit('message-share', data);
+socket.broadcast.emit('message-share', data);
 
 //Send the data just to the sender
 // socket.emit('message-share', data);

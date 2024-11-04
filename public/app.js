@@ -82,6 +82,8 @@ let mouseData = {
   b: myBlue,
   a: myAlpha,
   d: circleSize,
+  ra: range,
+  ch: charge,
   v: dataArray[0]
 }
 socket.emit('message', mouseData);
@@ -90,6 +92,8 @@ socket.emit('message', mouseData);
 
 function ticked(obj) {
 
+range = obj.ra;
+charge = obj.ch;
   
 var links = voronoi.links(nodes);
 
