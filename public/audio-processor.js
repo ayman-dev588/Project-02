@@ -28,7 +28,6 @@ function processAudio() {
 }
 
 window.addEventListener('click', () => {
-    console.log(dataArray);
     const micButton = document.getElementById("instructions");
     micButton.style.display = "none";
 

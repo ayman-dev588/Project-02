@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/controls/OrbitControls.js"></script>
+
   <link href="style.css" rel="stylesheet" />
   <title></title>
 </head>
@@ -14,9 +17,54 @@
     <button id="enable">Enable Microphone</button>
     <p>Use your microphone and cursor movement to create your visualization. </p>
       
-  <p>Each user will be assigned a random color, size, and shape.</p>
+    <p>Each user will be assigned a random color, size, and shape.</p>
   </div>
-  <div class="chart"></div><!-- .chart -->
+
+
+  <div class="controls">
+  <div>
+    <label for="slider1">Connected lines</label>
+    <input type="range" id="slider1" min="0.1" max="10" value="0.1">
+</div>
+
+<div>
+    <label for="slider2">Border thickness</label>
+    <input type="range" id="slider2" min="0.1" max="10" value="2">
+</div>
+
+<div>
+  <label for="slider3">Circle size</label>
+  <input type="range" id="slider3" min="0.1" max="10" value="1">
+</div>
+
+<div>
+  <label for="slider4">Slider 4</label>
+  <input type="range" id="slider4" min="0" max="200" value="60">
+</div>
+
+<div>
+  <input type="color" id="colorPicker1" value="#0000ff">
+    <label for="colorPicker1">Circle fill color</label>
+</div>
+
+<div>
+  <input type="color" id="colorPicker2" value="#000000">
+  <label for="colorPicker2">Circle broder color</label>
+</div>
+  
+<div>
+  <input type="color" id="colorPicker3" value="#ff00ff">
+  <label for="colorPicker3">Lines color</label>
+</div>
+
+<div>
+  <input type="color" id="colorPicker4" value="#000000">
+  <label for="colorPicker4">Background color</label>
+</div>
+</div>
+
+  <div class="chart"> </div><!-- .chart -->
+
   <script src="audio-processor.js"></script>
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
   <script src="app.js"></script>
